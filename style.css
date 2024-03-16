@@ -1,0 +1,117 @@
+
+:root {
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'text-font', var(--system-ui);
+  }
+
+@font-face {
+    font-family: "viking-font";
+    src: url("images/Roboto_Condensed/Norse-Bold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "text-font";
+    src: url("images/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf") format("truetype");
+}
+/* Credit the creator of the background image! */
+/* Begin all over again! */
+
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: #0E0E0E;
+}
+
+.wrapper {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+}
+
+/* left side with images */
+
+.logo-section {
+    width: 33%;
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bg-enhancer {
+    display: flex;
+    background-color: rgba(14, 14, 14, .5);
+    justify-content: center;
+    margin-top: 6.5rem;
+}
+
+.odin-name {
+    color: #ffffff;
+    font-size: 4rem;
+    align-self: center;
+    font-family: "viking-font", "text-font", var(--system-ui);
+}
+
+.img-container img {
+    width: auto;
+    height: 7rem;
+}
+
+/* Right side -> form and text */
+
+.form-section {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #ffffffee;
+}
+
+
+.text {
+    padding-left: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+}
+
+.text p {
+    margin: 0;
+    padding: 0;
+    width: 40ch;
+}
+
+
+.text h2 {
+    margin-bottom: 1rem;
+}
+
+.form {
+    background-color: #ffffff;
+    padding-left: 2rem;
+}
+
+.button-container {
+    padding-left: 2rem;
+}
+
+/* button */
+
+.button-container button {
+    background-color: #596D48;
+    font-family: "text-font", var(--system-ui);
+    margin-top: 1.5rem;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+}
+
+.button-container p span {
+    color: #596D48;
+}
+
+.bold {
+    font-weight: bold;
+}
