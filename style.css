@@ -4,6 +4,12 @@
     font-family: 'text-font', var(--system-ui);
   }
 
+*, ::before, ::after  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: "viking-font";
     src: url("images/Roboto_Condensed/Norse-Bold.otf") format('opentype');
@@ -18,22 +24,24 @@
 
 body {
     display: flex;
-    margin: 0;
-    padding: 0;
     justify-content: center;
     background-color: #0E0E0E;
 }
 
 .wrapper {
-    width: 80%;
+    width: 75%;
     height: 100vh;
     display: flex;
+}
+
+.bigger-font {
+    font-size: 1.2rem;
 }
 
 /* left side with images */
 
 .logo-section {
-    width: 33%;
+    width: 40%;
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -43,7 +51,7 @@ body {
     display: flex;
     background-color: rgba(14, 14, 14, .5);
     justify-content: center;
-    margin-top: 6.5rem;
+    margin-top: 9rem;
 }
 
 .odin-name {
@@ -61,17 +69,16 @@ body {
 /* Right side -> form and text */
 
 .form-section {
-    width: 67%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    background-color: #ffffffee;
+    background-color: #F6F7F8;
 }
-
 
 .text {
     padding-left: 2rem;
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-bottom: 2.5rem;
 }
 
@@ -86,11 +93,6 @@ body {
     margin-bottom: 1rem;
 }
 
-.form {
-    background-color: #ffffff;
-    padding-left: 2rem;
-}
-
 .button-container {
     padding-left: 2rem;
 }
@@ -101,6 +103,7 @@ body {
     background-color: #596D48;
     font-family: "text-font", var(--system-ui);
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     color: #ffffff;
     border-radius: 5px;
     border: none;
@@ -115,3 +118,55 @@ body {
 .bold {
     font-weight: bold;
 }
+
+/* Form */
+
+.registration-form {
+    background-color: #ffffff;
+    
+    
+    box-shadow: 0px 4px 4px -2px #D6D9DC;
+    border-radius: 3px;
+    margin: 0;
+}
+
+input {
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    display: block;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 5px;
+}
+
+label {
+    font: inherit;
+    font-weight: 900;
+    font-size: 65%;
+    letter-spacing: 0.1rem; 
+    color: rgba(14, 14, 14, 0.600);;
+}
+
+.form-p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+.input-block {
+    display: flex;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 200px;
+}
+
+
