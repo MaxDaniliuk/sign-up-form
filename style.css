@@ -141,6 +141,7 @@ input {
     font-family: inherit;
     font-size: 100%;
     padding: 5px;
+    width: 100%;
 }
 
 label {
@@ -148,7 +149,7 @@ label {
     font-weight: 900;
     font-size: 65%;
     letter-spacing: 0.1rem; 
-    color: rgba(14, 14, 14, 0.600);;
+    color: rgba(14, 14, 14, 0.7)
 }
 
 .form-p {
@@ -167,6 +168,71 @@ label {
     margin-left: 2rem;
     margin-right: 2rem;
     width: 200px;
+}
+
+input::placeholder {
+    color: #ccccce;
+}
+
+input:focus {
+    outline: 1px solid #5E9ED6;
+    box-shadow: 2px 2px 4px 2px #D6D9DC;
+    background-color: #ffffff;
+}
+/*
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #5E9ED6;
+  -webkit-text-fill-color: rgba(14, 14, 14, 0.7);
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+*/
+
+.input-span {
+    display: flex;
+}
+
+.error,
+input + .correct {
+    position: relative;
+}
+
+
+.incorrect::before {
+    position: absolute;
+    left: 0px;
+    top: -20px;
+}
+
+
+input + .correct::before {
+    position: absolute;
+    right: -20px;
+    top: 5px;
+  }
+
+input[type="password"] + .correct::before, 
+input[type="tel"]:valid + .correct::before,
+input[type="email"]:valid + .correct::before,
+input[type="text"]:valid + .correct::before {
+    /* border: 1px solid green; */
+    content: "✓";
+    color: green;
+}
+
+.incorrect::before {
+    content: "* Passwords do not match";
+    color: #990F02;
+    font-size: 60%;
+    display: block;
 }
 
 

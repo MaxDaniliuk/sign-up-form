@@ -25,48 +25,140 @@
                 </p>
             </header>
             <div class="form">
-                <form action=" " method="get" class="registration-form">
+                <form action=" " method="get" class="registration-form" id="create-account" autocomplete="off">
                     <p class="bold form-p bigger-font">Let's do this!</p>
                     <div class="form-wrapper">
                         <div class="input-block">
                             <div class="form-row">
                                 <label for="fname">FIRST NAME</label>
-                                <input type="text" id="fname" name="fname">
+                                <div class="input-span">
+                                    <input type="text" id="fname" name="fname" required>
+                                    <span class="correct"></span>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <label for="lname">LAST NAME</label>
-                                <input type="text" id="lname" name="lname">
+                                <div class="input-span">
+                                    <input type="text" id="lname" name="lname" required>
+                                    <span class="correct"></span>
+                                </div>
                             </div>
                         </div>
                         <div class="input-block">
                             <div class="form-row">
                                 <label for="email">EMAIL</label>
-                                <input type="email" id="email" name="email">
+                                <div class="input-span">
+                                    <input type="email" id="email" name="email" placeholder="warrior@example.com" required>
+                                    <span class="correct"></span>
+                                </div>
                             </div>
                             <div class="form-row">
-                                <label for="tel">PHONE NUMBER</label>
-                                <input type="tel" id="tel" name="tel">
+                                <label for="phone">PHONE NUMBER (Optional)</label>
+                                <div class="input-span">
+                                    <input type="tel" id="phone" name="phone" placeholder="+442012341234">
+                                    <span class="correct"></span>
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="input-block">
                             <div class="form-row">
                                 <label for="password">PASSWORD</label>
-                                <input type="password" id="password" name="password">
+                                <div class="input-span">
+                                    <input type="password" id="password" name="password" required class="pass">
+                                    <span class="password"></span> <!--add class "correct" -->
+                                   
+                                </div>
+                                <span class="error"></span>
+                                <!--add class "incorrect" -->
                             </div>
                             <div class="form-row">
                                 <!-- Password confirmation, JS comaprison of two passwords -->
                                 <label for="password-confirmation">CONFIRM PASSWORD</label>
-                                <input type="password" id="password-confirmation" name="password-confirm">
+                                <div class="input-span">
+                                    <input type="password" id="password-confirmation" name="password-confirm" required class="pass">
+                                    <span class="password"></span><!--add class "correct" -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="button-container">
-                <button>Create Account</button>
+                <button type="submit" form="create-account">Create Account</button>
                 <p>Already have an account? <span class="bold">Log in</span></p>
             </div>
         </div>
     </div>
+    <script>
+        /*
+        const passwordInput = document.querySelector('#password');
+        const passwordConfirmation = document.querySelector('#password-confirmation');
+        let pass = passwordInput.value;
+        let confPass = passwordConfirmation.value
+
+        passwordInput.addEventListener('input', () => {
+            let pass = passwordInput.value;
+            passwordConfirmation.addEventListener('input', () => {
+                validatePasswords(pass, confPass)
+            })
+        })
+        */
+
+        const passes = document.querySelectorAll('.pass');
+        const passInputs = [...passes];
+
+        passInputs.forEach(pass => pass.addEventListener('input', validatePasswords));
+        
+        function validatePasswords() {
+            const passwordSpansNode = document.querySelectorAll('.password');
+            const passwordSpans = [...passwordSpansNode];
+            let error = document.querySelector('.error');
+
+            let passwordOne = passInputs[0].value;
+            let passwordTwo = passInputs[1].value;
+            if (passwordOne === null) {
+                passwordOne = '';
+            } 
+            if (passwordTwo === null) {
+                passwordTwo = '';
+            }
+
+            if (passwordOne === '' || passwordTwo === '') {
+                passwordSpans.forEach(span => {
+                    span.classList.remove("correct");
+                    //span.classList.remove("incorrect")
+
+                })
+                error.classList.remove("incorrect");
+                passwordInput.style.setProperty('border', '1px solid #D6D9DC');
+                passwordConfirmation.style.setProperty('border', '1px solid #D6D9DC');
+                
+                console.log("1 boolean")
+            }
+            else if (passwordOne === passwordTwo) {
+                passwordSpans.forEach(span => {
+                    span.classList.add("correct");
+                    //span.classList.remove("incorrect");
+                })
+                error.classList.remove("incorrect");
+                passwordInput.style.setProperty('border', '1px solid #D6D9DC');
+                passwordConfirmation.style.setProperty('border', '1px solid #D6D9DC');
+                //passwordError.classList.remove("incorrect");
+                console.log("2 boolean")
+            } else if (passwordOne !== passwordTwo) {
+                passwordSpans.forEach(span => {
+                    span.classList.remove("correct");
+                    //span.classList.add("incorrect");
+                })
+                error.classList.add("incorrect");
+                passwordInput.style.setProperty('border', '1px solid #990F02');
+                passwordConfirmation.style.setProperty('border', '1px solid #990F02');
+                //passwordError.classList.add("incorrect");
+                console.log("3 boolean")
+            }
+            
+        }
+    </script>
 </body>
 </html>
