@@ -51,7 +51,7 @@ body {
     display: flex;
     background-color: rgba(14, 14, 14, .5);
     justify-content: center;
-    margin-top: 9rem;
+    margin-top: 6rem;
 }
 
 .odin-name {
@@ -72,20 +72,20 @@ body {
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: #F6F7F8;
 }
 
 .text {
     padding-left: 2rem;
-    margin-top: 8rem;
+    margin-top: 5rem;
     margin-bottom: 2.5rem;
 }
 
 .text p {
     margin: 0;
     padding: 0;
-    width: 40ch;
+    width: min(40ch, 100%);
 }
 
 
@@ -236,3 +236,51 @@ input[type="text"]:valid + .correct::before {
 }
 
 
+
+@media only screen and (max-device-width: 480px) {
+    body {
+        display: block;
+        background-color: #ffffff;
+        
+    }
+
+    .wrapper {
+        height: auto;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo-section {  /* Adjust elements' width so the would become mobile*/
+        width: 100%;
+        background-size: cover;
+        
+    }
+
+    .form-section {
+        width: 100%;
+    }
+
+    .text {
+        padding-right: 2rem;
+        margin-top: 3rem;
+    }
+
+    .button-container {
+        padding-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+
+    .input-block {
+        flex-direction: column;
+    }
+    
+    .bg-enhancer {
+        margin-top: 2rem;
+    }
+}
