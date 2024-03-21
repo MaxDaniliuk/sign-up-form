@@ -66,18 +66,16 @@
                                 <label for="password">PASSWORD</label>
                                 <div class="input-span">
                                     <input type="password" id="password" name="password" required class="pass">
-                                    <span class="password"></span> <!--add class "correct" -->
+                                    <span class="password"></span>
                                    
                                 </div>
                                 <span class="error"></span>
-                                <!--add class "incorrect" -->
                             </div>
                             <div class="form-row">
-                                <!-- Password confirmation, JS comaprison of two passwords -->
                                 <label for="password-confirmation">CONFIRM PASSWORD</label>
                                 <div class="input-span">
                                     <input type="password" id="password-confirmation" name="password-confirm" required class="pass">
-                                    <span class="password"></span><!--add class "correct" -->
+                                    <span class="password"></span>
                                 </div>
                             </div>
                         </div>
@@ -89,22 +87,9 @@
                 <p>Already have an account? <span class="bold">Log in</span></p>
             </div>
         </div>
+        <span class="credit">Photo by Halie West on Unsplash</span>
     </div>
     <script>
-        /*
-        const passwordInput = document.querySelector('#password');
-        const passwordConfirmation = document.querySelector('#password-confirmation');
-        let pass = passwordInput.value;
-        let confPass = passwordConfirmation.value
-
-        passwordInput.addEventListener('input', () => {
-            let pass = passwordInput.value;
-            passwordConfirmation.addEventListener('input', () => {
-                validatePasswords(pass, confPass)
-            })
-        })
-        */
-
         const passes = document.querySelectorAll('.pass');
         const passInputs = [...passes];
 
@@ -127,37 +112,25 @@
             if (passwordOne === '' || passwordTwo === '') {
                 passwordSpans.forEach(span => {
                     span.classList.remove("correct");
-                    //span.classList.remove("incorrect")
-
                 })
                 error.classList.remove("incorrect");
                 passwordInput.style.setProperty('border', '1px solid #D6D9DC');
                 passwordConfirmation.style.setProperty('border', '1px solid #D6D9DC');
-                
-                console.log("1 boolean")
-            }
-            else if (passwordOne === passwordTwo) {
+            } else if (passwordOne === passwordTwo) {
                 passwordSpans.forEach(span => {
                     span.classList.add("correct");
-                    //span.classList.remove("incorrect");
                 })
                 error.classList.remove("incorrect");
                 passwordInput.style.setProperty('border', '1px solid #D6D9DC');
                 passwordConfirmation.style.setProperty('border', '1px solid #D6D9DC');
-                //passwordError.classList.remove("incorrect");
-                console.log("2 boolean")
             } else if (passwordOne !== passwordTwo) {
                 passwordSpans.forEach(span => {
                     span.classList.remove("correct");
-                    //span.classList.add("incorrect");
                 })
                 error.classList.add("incorrect");
                 passwordInput.style.setProperty('border', '1px solid #990F02');
                 passwordConfirmation.style.setProperty('border', '1px solid #990F02');
-                //passwordError.classList.add("incorrect");
-                console.log("3 boolean")
             }
-            
         }
     </script>
 </body>
